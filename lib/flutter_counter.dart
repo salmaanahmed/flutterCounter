@@ -7,7 +7,6 @@ import 'package:flutter/rendering.dart';
 typedef void CounterChangeCallback(num value);
 
 class Counter extends StatelessWidget {
-
   final CounterChangeCallback onChanged;
 
   Counter({
@@ -69,9 +68,10 @@ class Counter extends StatelessWidget {
   Widget build(BuildContext context) {
     final ThemeData themeData = Theme.of(context);
     color = color ?? themeData.accentColor;
-    textStyle = textStyle ?? new TextStyle(
-      fontSize: 20.0,
-    );
+    textStyle = textStyle ??
+        new TextStyle(
+          fontSize: 20.0,
+        );
 
     return new Container(
       padding: new EdgeInsets.all(4.0),
@@ -83,6 +83,7 @@ class Counter extends StatelessWidget {
             width: buttonSize,
             height: buttonSize,
             child: FloatingActionButton(
+              heroTag: "decrementBtn",
               onPressed: _decrementCounter,
               elevation: 2,
               tooltip: 'Decrement',
@@ -94,13 +95,13 @@ class Counter extends StatelessWidget {
             padding: EdgeInsets.all(4.0),
             child: new Text(
                 '${num.parse((selectedValue).toStringAsFixed(decimalPlaces))}',
-                style: textStyle
-            ),
+                style: textStyle),
           ),
           new SizedBox(
             width: buttonSize,
             height: buttonSize,
             child: FloatingActionButton(
+              heroTag: "decrementBtn",
               onPressed: _incrementCounter,
               elevation: 2,
               tooltip: 'Increment',
