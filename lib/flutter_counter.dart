@@ -83,6 +83,7 @@ class Counter extends StatelessWidget {
             width: buttonSize,
             height: buttonSize,
             child: FloatingActionButton(
+              heroTag: null,
               onPressed: _decrementCounter,
               elevation: 2,
               tooltip: 'Decrement',
@@ -101,6 +102,7 @@ class Counter extends StatelessWidget {
             width: buttonSize,
             height: buttonSize,
             child: FloatingActionButton(
+              heroTag: null,
               onPressed: _incrementCounter,
               elevation: 2,
               tooltip: 'Increment',
